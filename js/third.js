@@ -28,5 +28,5 @@ liEl.append(imgEl)
 const imgBlock = images.map(makeImg).join("")
 
 const blockUl = document.querySelector(".gallery")
-blockUl.insertAdjacentHTML("beforeend", "imgBlock")
-// console.log(imgBlock)
+blockUl.insertAdjacentHTML("beforeend", imgBlock)
+

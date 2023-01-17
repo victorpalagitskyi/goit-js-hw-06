@@ -20,13 +20,13 @@ const makeImg = ({ url, alt }) => {
 imgEl.src = url
 imgEl.alt = alt
 const liEl = document.createElement("li")
-liEl.classList.add("item")
-
+    liEl.classList.add("item")
+    
 liEl.append(imgEl)
-    return imgEl
+    return liEl
 }
 const imgBlock = images.map(makeImg).join("")
 
 const blockUl = document.querySelector(".gallery")
 blockUl.insertAdjacentHTML("beforeend", "imgBlock")
-console.log(imgBlock)
+// console.log(imgBlock)

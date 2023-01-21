@@ -16,7 +16,7 @@ const images = [
 
 
 const makeImg = ({ url, alt }) => {
- return `<li class = "js-gallery_item"><img src = "${url}" alt = $"{alt}"></li> `
+ return `<li class = "js-gallery_item"><img src = "${url}" alt = "${alt}"></li> `
 }
 const imgBlock = images.map(makeImg).join("")
 

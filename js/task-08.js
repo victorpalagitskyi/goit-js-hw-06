@@ -7,24 +7,19 @@ const clientInfo = {
     email: "",
     password: "" 
 }  
-
-firstElementEmail.addEventListener("input", onTargetEmail)
-function onTargetEmail(event) {
-    clientInfo.email = event.target.value
-}        
-
-secondElementPassword.addEventListener("input", onTargetPassword)
-function onTargetPassword(event) {
-    clientInfo.password = event.target.value
- 
-    mainForm.addEventListener("submit", onFormSubmit)
-    function onFormSubmit(event) {
-        event.preventDefault()
-        if (clientInfo.email === "" || clientInfo.password === "") {
-            alert("Empty string")
-        }
-
-        console.log(clientInfo)
-        event.currentTarget.reset()
+mainForm.addEventListener("submit", onFormSubmit)
+function onFormSubmit(e) {
+    e.preventDefault()
+    const {
+        elements: { email, password }
+    } = e.currentTarget;
+    if (email.value === "" || password.value === "") {
+        alert("Empty string")
+    } else { 
+        clientInfo.email = email.value,
+        clientInfo.password = password.value
     }
+    console.log(clientInfo)
+    e.currentTarget.reset()
+ 
 }
